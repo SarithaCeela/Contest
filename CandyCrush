@@ -1,0 +1,33 @@
+class Main{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int q=sc.nextInt();
+while(q-- >0){
+long N=sc.nextLong();
+System.out.println(candyCrush(N,0,0));
+}
+}
+
+static long candyCrush(long N, long cost,long group)
+	{
+		if(N==0)
+		{
+			return cost;
+		}
+		if(N%3==0)
+		{
+
+			group = N/3;
+			cost = cost + (group*group);
+			return candyCrush(N-group,cost,0);
+
+		}
+		else
+		{
+			group = (N/3)+1;
+			cost = cost + (group*group);
+			return candyCrush(N-group,cost,0);
+
+		}
+	}
+  }
