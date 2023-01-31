@@ -39,3 +39,20 @@ Sample Input:
 Sample Output:
 80
 79
+
+static void alternate_Matrix_Sum(int mat[][], int N)
+    {
+        long sum =0, sum1 = 0;
+        for(int i = 0; i < N; i++)
+        {
+            for(int j = 0; j < N; j++)
+            {
+                if((i+j)%2 == 0)
+                  sum += mat[i][j];
+                else sum1 += mat[i][j];
+            }
+            
+        }
+        System.out.println(sum);
+        System.out.print(sum1);
+    }  
