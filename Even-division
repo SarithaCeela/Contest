@@ -1,0 +1,83 @@
+Even division
+easy
+Time Limit: 2 sec
+Memory Limit: 128000 kB
+Problem Statement
+Given an array of N integers, You can perform the following operation on the array if all the elements in the array are even:-
+Divide each element of the array by 2.
+Can you find the number of operations you can perform.
+Input
+The first line of input contains a single integer N. The next line of input contains N space separated integers.
+
+Constraints;-
+1 ≤ N ≤ 105
+1 ≤ Arr[i] ≤ 100000
+Output
+Print the number of operations you can perform on the array.
+Example
+Sample Input:-
+5
+4 64 28 12 28
+
+Sample Output:-
+2
+
+Sample Input:-
+5
+2 4 6 8 1
+
+Sample Output:-
+0
+import java.io.*; // for handling input/output
+
+import java.util.*; // contains Collections framework
+
+
+ 
+
+// don't change the name of this class
+
+// you can add inner classes if needed
+
+class Main {
+
+    public static void main (String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+
+        int max = 999999;
+
+        for(int i=0;i<n;i++){
+
+            int a = s.nextInt();
+
+            max = Math.min(max,maxDivisible(a));
+
+        }
+
+        System.out.println(max);
+
+    }
+
+    public static int maxDivisible(int num){
+
+        int count = 0 ;
+
+        while(num > 1 && num % 2 == 0 ){
+
+            num = num / 2;
+
+            count++;
+
+        }
+
+        return count;
+
+    }
+
+}
+
+
+ 
