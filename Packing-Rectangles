@@ -1,3 +1,25 @@
+Packing Rectangles (Contest)
+easy
+Time Limit: 2 sec
+Memory Limit: 128000 kB
+Problem Statement
+There are n rectangles of the same size: w in width and h in length. It is required to find a square of the smallest size into which these rectangles can be packed. Rectangles cannot be rotated.
+Input
+The first line of the input contains three space separated integers w, h and n.
+
+Constraints
+1 ≤ w, h, n ≤ 109
+Output
+Output the minimum length of a side of a square, into which the given rectangles can be packed.
+Example
+Sample Input :
+2 3 10
+Sample Output:
+9
+
+Explanation:
+9 is the minimum size of the square in which all these rectangles can fit.
+
 //Packing Rectangles
 
 import java.io.*; // for handling input/output
