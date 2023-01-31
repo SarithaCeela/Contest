@@ -1,0 +1,56 @@
+//Packing Rectangles
+
+import java.io.*; // for handling input/output
+
+import java.util.*; 
+
+
+class Main {
+
+    public static void main (String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        long w = s.nextLong();
+
+        long h = s.nextLong();
+
+        long n = s.nextLong();
+
+        
+
+        long left = 1;
+
+        long right = (long)(1e18)*1L;
+
+        long ans = -1;
+
+        while(left <= right){
+
+            long mid = left +(right - left)/2;
+
+            long sq = mid ;
+
+            long x = sq/w;
+
+            long y = sq/h;
+
+            if((y > 0 && x >= ((n-1)/y+1)) || (x > 0 && y >= ((n-1)/x+1))){
+
+                ans = sq;
+
+                right = mid - 1;
+
+            }else {
+
+                left = mid + 1;
+
+            }
+
+        }
+
+        System.out.println(ans);
+
+    }
+
+}
