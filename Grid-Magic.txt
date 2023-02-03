@@ -1,0 +1,97 @@
+//Grid Magic
+
+
+import java.io.*; // for handling input/output
+
+import java.util.*; // contains Collections framework
+
+
+ 
+
+// don't change the name of this class
+
+// you can add inner classes if needed
+
+class Main {
+
+    public static void main (String[] args) {
+
+        // Your code here
+
+        Scanner sc=new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        char mat[][] = new char[n][n];
+
+        for(int i = 0; i < n; i++) {
+
+            String s = sc.next();
+
+            for(int j = 0; j < n; j++) {
+
+                mat[i][j] = s.charAt(j);
+
+            }
+
+        }
+
+        
+
+        HashSet<Character> set = new HashSet<>();
+
+        HashSet<Character> set2 = new HashSet<>();
+
+        for(int i = 0; i < n; i++) {
+
+            for(int j = 0; j < n; j++) {
+
+                char ch = mat[i][j];
+
+                if(i == j || (n - j - 1) == i){
+
+                    set.add(ch);
+
+                }
+
+                else {
+
+                    set2.add(ch);
+
+                }
+
+            }
+
+        }
+
+        
+
+        if(set.size() > 1 || set2.size() > 1) {
+
+            System.out.print("NO");
+
+            return;
+
+        }
+
+        char l = '\0';
+
+        for(char i : set) l = i;
+
+        char z = '\0';
+
+        for(char i : set2) z = i;
+
+        if(l == z) {
+
+            System.out.print("NO");
+
+        }
+
+        else 
+
+        System.out.print("YES");
+
+    }
+
+}
