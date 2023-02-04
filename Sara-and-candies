@@ -1,0 +1,8 @@
+static long distributeCandies(long N,long X,long Y) {
+for(int i=0;i<=N;i++) { 
+if((N-i)+X==(Y-i) || (X-i)==(N-i)+Y) {
+return 1;
+}
+}
+return 0;
+}
