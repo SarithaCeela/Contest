@@ -1,0 +1,96 @@
+
+import java.io.*; // for handling input/output
+
+import java.util.*; // contains Collections framework
+
+ 
+
+// don't change the name of this class
+
+// you can add inner classes if needed
+
+class Main {
+
+    static int findBestValue (int [] arr, int target)
+
+    {
+
+        Arrays.sort(arr);
+
+        int max = Integer.MAX_VALUE;
+
+        int len = arr.length;
+
+        int result = -1;
+
+        int low = 0,high = arr[len-1]+1;
+
+        while(low<=high)
+
+        {
+
+            int mid = (low+high)/2;
+
+            int sum = 0,i=0;
+
+            while(i<len && arr[i] <mid)
+
+            sum+= arr[i++];
+
+            if(max > Math.abs(sum+(len-i) * mid -target))
+
+            {
+
+                max = Math.abs((sum+(len-i) * mid) -target);
+
+                result = mid;
+
+            }
+
+            if((sum+(len -i) * mid) < target)
+
+            low = mid+1;
+
+            else
+
+            high = mid -1;
+
+        }
+
+        return result;
+
+    }
+
+    public static void main (String[] args) {
+
+       Scanner sc = new Scanner(System.in);
+
+       int tc = sc.nextInt();
+
+       while(tc-->0)
+
+       {
+
+           int n = sc.nextInt();
+
+           int target = sc.nextInt();
+
+           int arr[] = new int[n];
+
+           for(int i =0;i<n;i++)
+
+           {
+
+               arr[i] = sc.nextInt();
+
+           }
+
+           System.out.println(findBestValue(arr,target));
+
+       }
+
+       
+
+    }
+
+}
