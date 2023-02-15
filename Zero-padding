@@ -1,0 +1,23 @@
+Zero padding sol:
+
+import java.io.*; // for handling input/output
+
+import java.util.*; // contains Collections framework
+
+class Main {
+
+public static void main (String[] args) {
+
+Scanner sc = new Scanner(System.in);
+
+long N = sc.nextInt();
+
+long p = sc.nextInt();
+
+long ans = (N+p*2)*(N+p*2) - (N*N);
+
+System.out.print(ans);
+
+}
+
+}
