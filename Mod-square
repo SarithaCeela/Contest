@@ -1,0 +1,67 @@
+
+nikhilsaini0210
+NIKHIL Saini
+a day ago
+import java.io.*;
+
+import java.util.*;
+
+
+ 
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+
+        String[] input = br.readLine().split(" ");
+
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+
+            arr[i] = Integer.parseInt(input[i]);
+
+        }
+
+        int first = Integer.MIN_VALUE;
+
+        int second = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+
+            if(arr[i] > first) {
+
+                second = first;
+
+                first = arr[i];
+
+            }
+
+            else if(arr[i] > second && arr[i] != first) {
+
+                second = arr[i];
+
+            }
+
+        }
+
+
+ 
+
+        if(second == Integer.MIN_VALUE) {
+
+            System.out.println(0);
+
+        }
+
+        else
+
+            System.out.println(second);
+
+    }
+
+}
